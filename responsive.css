@@ -149,44 +149,61 @@ p[class*="HomePageHeroSection_headBlackText"] {
     }
 }
 
-/* --- CATEGORY TAB BAR MOBILE FIX --- */
-@media (max-width: 768px) {
-    /* Touch scroll tab bar */
-    div[class*="StickyTabBar"],
-    div[class*="CategoryTabBar"],
-    div[class*="tabBar"] {
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding: 6px 0 10px !important;
-        display: flex !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
+/* --- CATEGORY TAB BAR MOBILE OVERHAUL --- */
+div[class*="StickyTabBar_tabContainer"],
+div[class*="StickyTabBar_wrapper"],
+div[class*="HomePageBody_listContainerClass"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #eaeaea !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+}
 
-    /* Hide tiny stacked "Trending" badge on mobile to keep tab text clean & legible */
-    div[class*="StickyTabBar"] span[class*="TrendingBadge"] {
-        display: none !important;
-    }
+div[class*="StickyTabBar_tagContainer"] {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 8px 16px !important;
+    height: auto !important;
+    min-height: 38px !important;
+    border-radius: 20px !important;
+    background: #f4f5f7 !important;
+    border: 1px solid #e2e4e8 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+}
 
-    div[class*="StickyTabBar_tagContainer"] {
-        padding: 8px 14px !important;
-        margin-right: 8px !important;
-        display: inline-flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 6px !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        border-radius: 20px !important;
-        background: #f8f9fa !important;
-    }
+div[class*="StickyTabBar_tagLabel"] {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
 
-    div[class*="StickyTabBar_tagLabel"] {
-        font-size: 13px !important;
-        line-height: 1.2 !important;
-        white-space: nowrap !important;
-    }
+div[class*="StickyTabBar_borderBottom"] {
+    display: none !important;
+}
+
+/* Hide tiny stacked "Trending" badge on mobile */
+div[class*="StickyTabBar"] span[class*="TrendingBadge"] {
+    display: none !important;
 }
 
 /* --- TOUR PRODUCT CARDS GRID (1 COLUMN ON MOBILE) --- */
