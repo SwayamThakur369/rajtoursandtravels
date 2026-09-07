@@ -100,6 +100,11 @@ header, div[class*="headerWrapper"] {
 
 /* --- HERO SECTION MOBILE HEADING FIX --- */
 @media (max-width: 768px) {
+    /* Mobile Hero Banner */
+    .mobile-hero-banner {
+        display: block !important;
+    }
+
     /* Ensure main page container has top spacing */
     main, .page-container {
         margin-top: 10px !important;
