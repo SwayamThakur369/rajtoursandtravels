@@ -5,6 +5,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure responsive stylesheet is loaded
+    if (!document.querySelector('link[href*="responsive.css"]')) {
+        const respLink = document.createElement('link');
+        respLink.rel = 'stylesheet';
+        respLink.href = '/responsive.css';
+        document.head.appendChild(respLink);
+    }
+
     // Inject global cleanup style for broken Next.js megamenu remnants
     const style = document.createElement('style');
     style.textContent = `
