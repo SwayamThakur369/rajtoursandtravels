@@ -27,33 +27,41 @@ div[style*="max-width: 1200px"] {
     max-width: 100% !important;
 }
 
-/* --- GLOBAL RESPONSIVE HEADER --- */
-header {
-    padding: 10px 20px !important;
+/* --- HEADER MOBILE OPTIMIZATION --- */
+header, div[class*="headerWrapper"] {
+    padding: 10px 16px !important;
     width: 100% !important;
     max-width: 100% !important;
 }
 
 @media (max-width: 768px) {
-    header {
+    header, div[class*="headerWrapper"] {
         padding: 8px 12px !important;
+        position: relative !important;
+        top: 0 !important;
     }
 
-    header > div {
+    header > div, div[class*="header_mainContent"] {
+        display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
-        gap: 8px !important;
+        align-items: center !important;
         justify-content: space-between !important;
+        width: 100% !important;
     }
 
     /* Logo scaling on mobile */
     .raj-brand-logo {
         gap: 8px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .raj-brand-logo div:first-child {
         width: 32px !important;
         height: 32px !important;
         border-radius: 8px !important;
+        flex-shrink: 0 !important;
     }
 
     .raj-brand-logo svg {
@@ -63,6 +71,7 @@ header {
 
     .raj-brand-logo span:first-child {
         font-size: 15px !important;
+        line-height: 1.1 !important;
     }
 
     .raj-brand-logo span:last-child {
@@ -70,20 +79,103 @@ header {
         letter-spacing: 1px !important;
     }
 
-    /* Header Nav Links & Callback Button */
-    header nav, header .header_navLinks__1FeCK, header div[style*="display: flex; gap: 25px"] {
-        gap: 8px !important;
+    /* Hide desktop text nav links ('Home' and 'Tour Packages') in top header on mobile */
+    .header_navLinks__1FeCK > a {
+        display: none !important;
     }
 
-    header a[href="/index.html"] {
+    .header_navLinks__1FeCK {
+        margin-left: auto !important;
+        gap: 0 !important;
+    }
+
+    header button, .header_navLinks__1FeCK button {
+        padding: 8px 16px !important;
         font-size: 12px !important;
-    }
-
-    header button {
-        padding: 7px 12px !important;
-        font-size: 11px !important;
         border-radius: 20px !important;
         white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* --- HERO SECTION MOBILE HEADING FIX --- */
+@media (max-width: 768px) {
+    /* Ensure main page container has top spacing */
+    main, .page-container {
+        margin-top: 10px !important;
+        padding-top: 5px !important;
+    }
+
+    /* Hero Heading font size & visibility */
+    h1, [class*="HeroTitle"], [class*="heroTitle"], [class*="mainHeading"] {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin: 12px 0 8px !important;
+        padding-top: 0 !important;
+        word-wrap: break-word !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* --- CATEGORY TAB BAR MOBILE FIX --- */
+@media (max-width: 768px) {
+    /* Touch scroll tab bar */
+    div[class*="StickyTabBar"],
+    div[class*="CategoryTabBar"],
+    div[class*="tabBar"] {
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 6px 0 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Hide tiny stacked "Trending" badge on mobile to keep tab text clean & legible */
+    div[class*="StickyTabBar"] span[class*="TrendingBadge"] {
+        display: none !important;
+    }
+
+    div[class*="StickyTabBar_tagContainer"] {
+        padding: 8px 14px !important;
+        margin-right: 8px !important;
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        border-radius: 20px !important;
+        background: #f8f9fa !important;
+    }
+
+    div[class*="StickyTabBar_tagLabel"] {
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* --- TOUR PRODUCT CARDS GRID (1 COLUMN ON MOBILE) --- */
+@media (max-width: 768px) {
+    /* Force 1 single card column on mobile screens */
+    div[class*="TripCards_container"],
+    div[class*="cardsWrapper"],
+    div[class*="productCardList"],
+    div[class*="grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    div[class*="productCard_productCardContainer"],
+    div[class*="TripCard"],
+    div[class*="card"] {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
@@ -135,12 +227,6 @@ header {
         letter-spacing: 0.5px !important;
     }
 
-    h1[style*="font-size: 38px"], h1 {
-        font-size: 22px !important;
-        line-height: 1.3 !important;
-        margin: 8px 0 6px !important;
-    }
-
     div[style*="bottom: 40px"] p {
         font-size: 13px !important;
         line-height: 1.4 !important;
@@ -171,27 +257,6 @@ header {
 
     div[style*="border-radius: 16px"] h4 {
         font-size: 15px !important;
-    }
-}
-
-/* --- HOMEPAGE & ALL PAGES GLOBAL MOBILE OPTIMIZATIONS --- */
-@media (max-width: 768px) {
-    /* Category Tab Bar Touch Scroll */
-    div[class*="CategoryTabBar"],
-    div[class*="tabBar"],
-    ul[class*="TabBar"] {
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding-bottom: 8px !important;
-        display: flex !important;
-    }
-
-    /* Tour Cards Grid */
-    div[class*="TripCards_container"],
-    div[class*="cardsWrapper"],
-    div[class*="grid"] {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
     }
 
     /* Footer Column Stacking */
