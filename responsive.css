@@ -98,28 +98,54 @@ header, div[class*="headerWrapper"] {
     }
 }
 
-/* --- HERO SECTION MOBILE HEADING FIX --- */
+/* --- HOMEPAGE HERO SECTION BACKGROUND IMAGE --- */
+div[class*="HomePageHeroSection_wrapper"],
+div[class*="HomePageHeroSection_containerTop"] {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat !important;
+    position: relative !important;
+    padding: 75px 20px 65px !important;
+    border-radius: 0 0 24px 24px !important;
+    text-align: center !important;
+}
+
+div[class*="HomePageHeroSection_headText"],
+h1[class*="HomePageHeroSection_headText"] {
+    color: #ffffff !important;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.6) !important;
+}
+
+div[class*="HomePageHeroSection_headText"] span,
+h1[class*="HomePageHeroSection_headText"] span {
+    color: #f36812 !important;
+    -webkit-text-fill-color: #f36812 !important;
+}
+
+div[class*="HomePageHeroSection_headBlackText"],
+p[class*="HomePageHeroSection_headBlackText"] {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    font-size: 16px !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+    margin-top: 8px !important;
+}
+
 @media (max-width: 768px) {
-    /* Mobile Hero Banner */
-    .mobile-hero-banner {
-        display: block !important;
+    div[class*="HomePageHeroSection_wrapper"],
+    div[class*="HomePageHeroSection_containerTop"] {
+        padding: 55px 16px 45px !important;
+        min-height: 300px !important;
+        border-radius: 0 0 20px 20px !important;
     }
-
-    /* Ensure main page container has top spacing */
-    main, .page-container {
-        margin-top: 10px !important;
-        padding-top: 5px !important;
-    }
-
-    /* Hero Heading font size & visibility */
-    h1, [class*="HeroTitle"], [class*="heroTitle"], [class*="mainHeading"] {
-        font-size: 24px !important;
+    
+    div[class*="HomePageHeroSection_headText"],
+    h1[class*="HomePageHeroSection_headText"] {
+        font-size: 26px !important;
         line-height: 1.3 !important;
-        margin: 12px 0 8px !important;
-        padding-top: 0 !important;
-        word-wrap: break-word !important;
-        display: block !important;
-        visibility: visible !important;
+    }
+
+    div[class*="HomePageHeroSection_headBlackText"],
+    p[class*="HomePageHeroSection_headBlackText"] {
+        font-size: 14px !important;
     }
 }
 
